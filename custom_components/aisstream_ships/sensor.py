@@ -117,8 +117,8 @@ class AisstreamShipSlotSensor(_AisstreamBase):
             "speed_knots": ship.get("speed", 0),
             "length_m": ship.get("length_m", 0),
             "mmsi": ship.get("mmsi"),
-            "lat": ship.get("lat"),
-            "lon": ship.get("lon"),
+            "latitude": ship.get("lat"),
+            "longitude": ship.get("lon"),
             "last_seen": ship.get("last_seen"),
         }
 
