@@ -1,0 +1,26 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Aisstream Ships",
+        "description": "Connect to AISstream.io to track passenger vessels.",
+        "data": {
+          "api_key": "AISstream API Key",
+          "max_ships": "Max ships to track (2–10)",
+          "min_length_m": "Min ship length in metres (0 = all, 150 = cruise only)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Aisstream Ships Options",
+        "data": {
+          "max_ships": "Max ships to track",
+          "min_length_m": "Min ship length (metres)"
+        }
+      }
+    }
+  }
+}

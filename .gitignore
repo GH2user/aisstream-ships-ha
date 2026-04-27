@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments (if you test locally)
+.venv/
+venv/
+env/
+.env
+
+# Secrets — never commit your API key
+.env.local
+secrets.yaml
+*.secret
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VS Code / Cursor
+.vscode/
+*.code-workspace
+
+# JetBrains / PyCharm
+.idea/
+
+# pytest / coverage
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# mypy / type checking
+.mypy_cache/
+.dmypy.json
+
+# Ruff / linting
+.ruff_cache/
+
+# Local HA testing (if you ever run a local HA instance against this)
+config/
+.storage/
+home-assistant.log*
+
+# GitHub Actions secrets (local overrides)
+.github/secrets/
+
+# Release zips (generated, not source)
+*.zip
