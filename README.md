@@ -18,7 +18,7 @@ A custom HACS integration for Home Assistant that tracks passenger vessels in re
 ## Installation via HACS
 
 1. In Home Assistant, go to **HACS → Integrations → ⋮ → Custom repositories**
-2. Add `https://github.com/peterstnsz/aisstream-custom-ha` as an **Integration**
+2. Add `https://github.com/peterstnsz/aisstream-ships-ha` as an **Integration**
 3. Search for **Aisstream Ships** and install
 4. Restart Home Assistant
 5. Go to **Settings → Devices & Services → Add Integration** and search for **Aisstream Ships**
@@ -29,11 +29,11 @@ A custom HACS integration for Home Assistant that tracks passenger vessels in re
 
 During setup you will be prompted for:
 
-| Field | Description | Default |
-|---|---|---|
-| **AISstream API Key** | Free key from [aisstream.io](https://aisstream.io) | — |
-| **Max ships to track** | Number of ship sensor slots created (2–10) | 10 |
-| **Min ship length (m)** | Filter out small vessels. `0` = all, `150` = cruise ships only | 0 |
+| Field                   | Description                                                    | Default |
+| ----------------------- | -------------------------------------------------------------- | ------- |
+| **AISstream API Key**   | Free key from [aisstream.io](https://aisstream.io)             | —       |
+| **Max ships to track**  | Number of ship sensor slots created (2–10)                     | 10      |
+| **Min ship length (m)** | Filter out small vessels. `0` = all, `150` = cruise ships only | 0       |
 
 Settings can be updated later via **Settings → Devices & Services → Aisstream Ships → Configure**.
 
@@ -53,11 +53,11 @@ To track a different area, modify `DEFAULT_BBOX` in `const.py` or pass a custom 
 
 For a configuration with `max_ships = 5`, the following sensors are created:
 
-| Entity ID | Name | Description |
-|---|---|---|
-| `sensor.aisstream_ship_count` | Aisstream Ship Count | Number of matching ships currently visible |
-| `sensor.aisstream_ships_header` | Aisstream Ships Header | Summary string, e.g. `Ships in area: 3` |
-| `sensor.aisstream_ship_1` … `_5` | Aisstream Ship 1–5 | Ship name for each slot |
+| Entity ID                             | Name                    | Description                                             |
+| ------------------------------------- | ----------------------- | ------------------------------------------------------- |
+| `sensor.aisstream_ship_count`         | Aisstream Ship Count    | Number of matching ships currently visible              |
+| `sensor.aisstream_ships_header`       | Aisstream Ships Header  | Summary string, e.g. `Ships in area: 3`                 |
+| `sensor.aisstream_ship_1` … `_5`      | Aisstream Ship 1–5      | Ship name for each slot                                 |
 | `sensor.aisstream_ship_line_1` … `_5` | Aisstream Ship Line 1–5 | Formatted one-liner: `SHIP NAME (Underway > LIVERPOOL)` |
 
 ### State Attributes (per ship slot)
@@ -70,7 +70,7 @@ length_m: 171
 mmsi: 235123456
 lat: 53.401
 lon: -3.012
-last_seen: "2026-04-27T09:15:00+00:00"
+last_seen: '2026-04-27T09:15:00+00:00'
 ```
 
 ---
