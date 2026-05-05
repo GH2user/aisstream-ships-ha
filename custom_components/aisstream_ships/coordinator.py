@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.dispatcher import async_dispatcher_send
 from .const import (
-    AISSTREAM_WS, PASSENGER_TYPES, STATUS_MAP, SIGNAL_UPDATE,
+    AISSTREAM_WS, VESSEL_TYPES, STATUS_MAP, SIGNAL_UPDATE,
     CONF_API_KEY, CONF_MAX_SHIPS, CONF_MIN_LENGTH,
     CONF_BOUNDING_BOX, DEFAULT_BBOX, DEFAULT_MAX_SHIPS, DEFAULT_MIN_LENGTH
 )
@@ -37,7 +37,7 @@ class AisstreamShipsCoordinator:
     def get_passenger_ships(self, min_length: int = 0, max_results: int = 4) -> list:
         ships = [
             s for s in self.ships.values()
-            if s["ship_type"] in PASSENGER_TYPES
+            if s["ship_type"] in VESSEL_TYPES
             and s["name"] not in ("Unknown", "")
             and s["length_m"] >= min_length
         ]
@@ -54,7 +54,7 @@ class AisstreamShipsCoordinator:
         try:
             import websockets
         except ImportError:
-            _LOGGER.error("Aisstream Ships: websockets library not installed")
+            _LOGGER.error("AISstream Ships: websockets library not installed")
             return
 
         api_key = self._entry.data[CONF_API_KEY]
@@ -68,7 +68,7 @@ class AisstreamShipsCoordinator:
                         "BoundingBoxes": bbox,
                         "FilterMessageTypes": ["PositionReport", "ShipStaticData"]
                     }))
-                    _LOGGER.info("Aisstream Ships: connected to AISstream.io")
+                    _LOGGER.info("AISstream Ships: connected to AISstream.io")
                     async for raw in ws:
                         self._handle_message(json.loads(raw))
                         async_dispatcher_send(
@@ -79,7 +79,7 @@ class AisstreamShipsCoordinator:
                 return
             except Exception as exc:
                 _LOGGER.error(
-                    "Aisstream Ships: connection error: %s — retrying in %ss",
+                    "AISstream Ships: connection error: %s — retrying in %ss",
                     exc, RECONNECT_DELAY
                 )
                 await asyncio.sleep(RECONNECT_DELAY)
