@@ -1,6 +1,6 @@
 {
   "domain": "aisstream_ships",
-  "name": "Aisstream Ships",
+  "name": "AISstream Ships",
   "version": "1.1.0",
   "documentation": "https://github.com/peterstnsz/aisstream-ships-ha",
   "requirements": ["websockets>=10.0"],
