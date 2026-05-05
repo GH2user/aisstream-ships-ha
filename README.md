@@ -1,4 +1,4 @@
-# Aisstream Ships — Custom Home Assistant Integration
+# AISstream Ships — Custom Home Assistant Integration
 
 A custom HACS integration for Home Assistant that tracks passenger vessels in real time via the [AISstream.io](https://aisstream.io) WebSocket API. Originally built to monitor ships on the River Mersey / Liverpool Bay area, it works with any configurable bounding box worldwide.
 
@@ -55,10 +55,10 @@ For a configuration with `max_ships = 5`, the following sensors are created:
 
 | Entity ID                             | Name                    | Description                                             |
 | ------------------------------------- | ----------------------- | ------------------------------------------------------- |
-| `sensor.aisstream_ship_count`         | Aisstream Ship Count    | Number of matching ships currently visible              |
-| `sensor.aisstream_ships_header`       | Aisstream Ships Header  | Summary string, e.g. `Ships in area: 3`                 |
-| `sensor.aisstream_ship_1` … `_5`      | Aisstream Ship 1–5      | Ship name for each slot                                 |
-| `sensor.aisstream_ship_line_1` … `_5` | Aisstream Ship Line 1–5 | Formatted one-liner: `SHIP NAME (Underway > LIVERPOOL)` |
+| `sensor.aisstream_ship_count`         | AISstream Ship Count    | Number of matching ships currently visible              |
+| `sensor.aisstream_ships_header`       | AISstream Ships Header  | Summary string, e.g. `Ships in area: 3`                 |
+| `sensor.aisstream_ship_1` … `_5`      | AISstream Ship 1–5      | Ship name for each slot                                 |
+| `sensor.aisstream_ship_line_1` … `_5` | AISstream Ship Line 1–5 | Formatted one-liner: `SHIP NAME (Underway > LIVERPOOL)` |
 
 ### State Attributes (per ship slot)
 
