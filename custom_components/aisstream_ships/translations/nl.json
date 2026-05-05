@@ -1,0 +1,26 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "AISstream Schepen",
+        "description": "Verbind met AISstream.io om schepen te volgen.",
+        "data": {
+          "api_key": "AISstream API Key",
+          "max_ships": "Te volgen aantal schepen (2–10)",
+          "min_length_m": "Minimale scheepslengte [m] (0 = alles)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "AISstream Opties",
+        "data": {
+          "max_ships": "Te volgen aantal schepen",
+          "min_length_m": "Minimale scheepslengte [m]"
+        }
+      }
+    }
+  }
+}
