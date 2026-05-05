@@ -9,7 +9,7 @@ A custom HACS integration for Home Assistant that tracks vessels in real time vi
 - **Live ship tracking** via AISstream.io WebSocket (`cloud_push` — no polling)
 - You can customise your own fleet by adding the MSSI-numbers of each vessel (max 10)
 - As we select specific ships it can be any type; passenger vessels, cargo vessels, tankers and more (AIS ship types 10–99) including ferries and cruise ships
-- --
+- 
 - Creates HA sensor entities for ship count, header summary, individual ship slots, and formatted display lines
 - Exposes rich **state attributes** per ship: destination, speed, heading, status, length, MMSI, lat/lon, and last seen timestamp
 - Auto-reconnects on connection loss with a 30-second backoff
